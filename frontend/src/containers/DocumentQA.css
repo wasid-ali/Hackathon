@@ -1,0 +1,208 @@
+/* Ensure the container takes the full width and height of the viewport */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Chat container takes full height and width */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    background-color: #f5f5f5;
+    padding: 0;
+    margin: 0;
+}
+
+/* Chat window takes up all available vertical space */
+.chat-window {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-image: url('https://github.com/SRDJ7/KnowHive-Frontend/blob/main/src/assests/chatBackground.jpg?raw=true'); /* Update with the path to your texture image */
+    background-size: cover; /* or 'contain', depending on your preference */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    height: calc(100vh - 120px); /* Adjust height dynamically */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0.9; /* Optional: make the background slightly transparent */
+}
+
+/* Assistant's message bubble styling */
+.assistant-message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+}
+
+.assistant-icon {
+    font-size: 40px; /* Increase Font Awesome icon size */
+    color: #d2dd59;
+    margin-right: 10px; /* Space between icon and bubble */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.assistant-bubble {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* Tail for assistant message bubble */
+.assistant-bubble::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #007bff;
+}
+
+/* User's message bubble styling */
+.user-message {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.user-bubble {
+    background-color: #cccccc;
+    color: black;
+    padding: 12px;
+    border-radius: 12px;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* Tail for user message bubble */
+.user-bubble::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid #ccc;
+}
+
+.user-icon {
+    font-size: 40px; /* Increase Font Awesome icon size */
+    color: #d2dd59;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Input section is fixed at the bottom */
+.input-section {
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    align-items: center;
+    margin: 0 10px 10px 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    height: 50px; /* Set height for the input field */
+    box-sizing: border-box;
+}
+
+.voice-button {
+    margin-right: 10px; /* Add margin to create space */
+    background: none; /* Optional: Remove button background */
+    border: none; /* Optional: Remove button border */
+    cursor: pointer;
+    font-size: 20px; /* Adjust size as needed */
+    color: #007bff; /* Change color as needed */
+}
+
+.send-button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 50px; /* Ensure the button matches input height */
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+}
+
+button i {
+    margin-left: 8px;
+}
+
+/* Sample prompt button styling */
+.sample-prompts {
+    display: flex;
+    flex-wrap: wrap; /* Allows buttons to wrap to the next line if there's not enough space */
+    gap: 8px; /* Adds space between the buttons */
+    margin-top: 10px; /* Space above the prompt buttons */
+}
+
+.sample-prompt-button {
+    background-color: #ff000080; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 5px 10px; /* Smaller padding */
+    font-size: 14px; /* Smaller font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.sample-prompt-button:hover {
+    background-color: #7397bd; /* Darker shade on hover */
+}
+
+/* Scrollbar styling */
+.chat-window::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}

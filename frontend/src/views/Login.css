@@ -1,0 +1,40 @@
+body, html {
+    height: 100%;
+  }
+  
+  .login-page {
+    background: linear-gradient(87deg, #4e73df, #1cc88a);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0.375rem;
+  }
+  
+  h3 {
+    color: #ffffff;
+  }
+  
+  p {
+    color: #ffffff;
+  }
+  
+  hr {
+    margin: 20px 0;
+    border: 1px solid #e9ecef;
+  }
+  
+  .btn-block {
+    width: 100%;
+  }
+  
+  input {
+    background-color: #f8f9fa;
+    border: 1px solid #e3e3e3;
+  }
+  
